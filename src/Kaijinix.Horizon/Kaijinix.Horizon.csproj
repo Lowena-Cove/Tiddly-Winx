@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Audio\Kaijinix.Audio.csproj" />
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Horizon.Common\Kaijinix.Horizon.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Horizon.Generators\Kaijinix.Horizon.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Kaijinix.Memory\Kaijinix.Memory.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Concentus" />
+    <PackageReference Include="LibHac" />
+  </ItemGroup>
+</Project>

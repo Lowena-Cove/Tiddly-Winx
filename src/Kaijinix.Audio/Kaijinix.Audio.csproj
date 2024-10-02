@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Cpu\Kaijinix.Cpu.csproj" />
+    <ProjectReference Include="..\Kaijinix.Memory\Kaijinix.Memory.csproj" />
+  </ItemGroup>
+
+</Project>

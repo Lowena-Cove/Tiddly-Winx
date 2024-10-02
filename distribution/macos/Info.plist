@@ -5,11 +5,11 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
     <key>CFBundleExecutable</key>
-    <string>Ryujinx</string>
+    <string>Kaijinix</string>
     <key>CFBundleGetInfoString</key>
-    <string>Ryujinx</string>
+    <string>Kaijinix</string>
     <key>CFBundleIconFile</key>
-    <string>Ryujinx.icns</string>
+    <string>Kaijinix.icns</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -30,13 +30,13 @@
 		</dict>
 	</array>
     <key>CFBundleIdentifier</key>
-    <string>org.ryujinx.Ryujinx</string>
+    <string>org.Kaijinix.Kaijinix</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleLongVersionString</key>
-    <string>%%RYUJINX_BUILD_VERSION%%-%%RYUJINX_BUILD_GIT_HASH%%"</string>
+    <string>%%Kaijinix_BUILD_VERSION%%-%%Kaijinix_BUILD_GIT_HASH%%"</string>
     <key>CFBundleName</key>
-    <string>Ryujinx</string>
+    <string>Kaijinix</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -50,7 +50,7 @@
     <key>CSResourcesFileMapped</key>
     <true/>
     <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2018 - 2023 Ryujinx Team and Contributors.</string>
+    <string>Copyright © 2018 - 2023 Kaijinix Team and Contributors.</string>
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.games</string>
     <key>LSMinimumSystemVersion</key>
@@ -65,7 +65,7 @@
           <string>public.xml</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.xaml</string>
+        <string>com.Kaijinix.xaml</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>
@@ -82,7 +82,7 @@
           <string>public.data</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.nsp</string>
+        <string>com.Kaijinix.nsp</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>
@@ -99,7 +99,7 @@
           <string>public.data</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.xci</string>
+        <string>com.Kaijinix.xci</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>
@@ -116,7 +116,7 @@
           <string>public.data</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.nca</string>
+        <string>com.Kaijinix.nca</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>
@@ -133,7 +133,7 @@
           <string>public.data</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.nro</string>
+        <string>com.Kaijinix.nro</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>
@@ -150,7 +150,7 @@
           <string>public.data</string>
         </array>
         <key>UTTypeIdentifier</key>
-        <string>com.ryujinx.nso</string>
+        <string>com.Kaijinix.nso</string>
         <key>UTTypeTagSpecification</key>
         <dict>
           <key>public.filename-extension</key>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Hashing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.HLE\Kaijinix.HLE.csproj" />
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Audio\Kaijinix.Audio.csproj" />
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Cpu\Kaijinix.Cpu.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Host1x\Kaijinix.Graphics.Host1x.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Nvdec\Kaijinix.Graphics.Nvdec.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Vic\Kaijinix.Graphics.Vic.csproj" />
+    <ProjectReference Include="..\Kaijinix.HLE.Generators\Kaijinix.HLE.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    <ProjectReference Include="..\Kaijinix.Horizon.Common\Kaijinix.Horizon.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Horizon.Kernel.Generators\Kaijinix.Horizon.Kernel.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Kaijinix.Horizon\Kaijinix.Horizon.csproj" />
+    <ProjectReference Include="..\Kaijinix.Memory\Kaijinix.Memory.csproj" />
+    <ProjectReference Include="..\ARMeilleure\ARMeilleure.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Gpu\Kaijinix.Graphics.Gpu.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.GAL\Kaijinix.Graphics.GAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LibHac" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" />
+    <PackageReference Include="MsgPack.Cli" />
+    <PackageReference Include="SkiaSharp" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" />
+    <PackageReference Include="NetCoreServer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Homebrew.npdm" />
+    <None Remove="HOS\Applets\SoftwareKeyboard\Resources\Logo_Kaijinix.png" />
+    <None Remove="HOS\Applets\SoftwareKeyboard\Resources\Icon_BtnA.png" />
+    <None Remove="HOS\Applets\SoftwareKeyboard\Resources\Icon_BtnB.png" />
+    <None Remove="HOS\Applets\SoftwareKeyboard\Resources\Icon_KeyF6.png" />
+    <None Remove="HOS\Services\Account\Acc\DefaultUserImage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Homebrew.npdm" />
+    <EmbeddedResource Include="HOS\Applets\SoftwareKeyboard\Resources\Logo_Kaijinix.png" />
+    <EmbeddedResource Include="HOS\Applets\SoftwareKeyboard\Resources\Icon_BtnA.png" />
+    <EmbeddedResource Include="HOS\Applets\SoftwareKeyboard\Resources\Icon_BtnB.png" />
+    <EmbeddedResource Include="HOS\Applets\SoftwareKeyboard\Resources\Icon_KeyF6.png" />
+    <EmbeddedResource Include="HOS\Services\Account\Acc\DefaultUserImage.jpg" />
+  </ItemGroup>
+
+</Project>

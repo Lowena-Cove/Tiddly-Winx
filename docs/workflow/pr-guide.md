@@ -2,7 +2,7 @@
 
 ## Contributing Rules
 
-All contributions to Ryujinx/Ryujinx repository are made via pull requests (PRs) rather than through direct commits. The pull requests are reviewed and merged by the maintainers after a review and at least two approvals from the core development team.
+All contributions to Kaijinix/Kaijinix repository are made via pull requests (PRs) rather than through direct commits. The pull requests are reviewed and merged by the maintainers after a review and at least two approvals from the core development team.
 
 To merge pull requests, you must have write permissions in the repository.
 
@@ -24,11 +24,11 @@ If during the code review process a merge conflict occurs, the PR author is resp
 
 ## Pull Request Builds
 
-When submitting a PR to the `Ryujinx/Ryujinx` repository, various builds will run validating many areas to ensure we keep developer productivity and product quality high. These various workflows can be tracked in the [Actions](https://github.com/Ryujinx/Ryujinx/actions) tab of the repository. If the job continues to completion, the build artifacts will be uploaded and posted as a comment in the PR discussion.
+When submitting a PR to the `Kaijinix/Kaijinix` repository, various builds will run validating many areas to ensure we keep developer productivity and product quality high. These various workflows can be tracked in the [Actions](https://github.com/Kaijinix/Kaijinix/actions) tab of the repository. If the job continues to completion, the build artifacts will be uploaded and posted as a comment in the PR discussion.
 
 ## Review Turnaround Times
 
-Ryujinx is a project that is maintained by volunteers on a completely free-time basis. As such we cannot guarantee any particular timeframe for pull request review and approval. Weeks to months are common for larger (>500 line) PRs but there are some additional best practises to avoid review purgatory.
+Kaijinix is a project that is maintained by volunteers on a completely free-time basis. As such we cannot guarantee any particular timeframe for pull request review and approval. Weeks to months are common for larger (>500 line) PRs but there are some additional best practises to avoid review purgatory.
 
 * Make the reviewers life easier wherever possible. Make use of descriptive commit names, code comments and XML docs where applicable.
 * If there is disagreement on feedback then always lean on the side of the development team and community over any personal opinion.
@@ -42,7 +42,7 @@ Anyone with write access can merge a pull request manually when the following co
 
 * The PR has been approved by two reviewers and any other objections are addressed.
     * You can request follow up reviews from the original reviewers if they requested changes.
-* The PR successfully builds and passes all tests in the Continuous Integration (CI) system. In case of failures, refer to the [Actions](https://github.com/Ryujinx/Ryujinx/actions) tab of your PR.
+* The PR successfully builds and passes all tests in the Continuous Integration (CI) system. In case of failures, refer to the [Actions](https://github.com/Kaijinix/Kaijinix/actions) tab of your PR.
 
 Typically, PRs are merged as one commit (squash merges). It creates a simpler history than a Merge Commit. "Special circumstances" are rare, and typically mean that there are a series of cleanly separated changes that will be too hard to understand if squashed together, or for some reason we want to preserve the ability to dissect them.
 

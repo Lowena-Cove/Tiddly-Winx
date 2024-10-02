@@ -1,7 +1,7 @@
 using ARMeilleure.State;
-using Ryujinx.Common;
-using Ryujinx.Common.Logging;
-using Ryujinx.Common.Memory;
+using Kaijinix.Common;
+using Kaijinix.Common.Logging;
+using Kaijinix.Common.Memory;
 using System;
 using System.Buffers.Binary;
 using System.Collections.Concurrent;

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Cpu\Kaijinix.Cpu.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Device\Kaijinix.Graphics.Device.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.GAL\Kaijinix.Graphics.GAL.csproj" />
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Texture\Kaijinix.Graphics.Texture.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Shader\Kaijinix.Graphics.Shader.csproj" />
+  </ItemGroup>
+
+</Project>

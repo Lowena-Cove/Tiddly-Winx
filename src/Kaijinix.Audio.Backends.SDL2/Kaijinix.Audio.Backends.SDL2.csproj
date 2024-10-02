@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Audio\Kaijinix.Audio.csproj" />
+    <ProjectReference Include="..\Kaijinix.SDL2.Common\Kaijinix.SDL2.Common.csproj" />
+  </ItemGroup>
+
+</Project>

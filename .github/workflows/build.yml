@@ -6,7 +6,7 @@ on:
 env:
   POWERSHELL_TELEMETRY_OPTOUT: 1
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
-  RYUJINX_BASE_VERSION: "1.1.0"
+  Kaijinix_BASE_VERSION: "1.1.0"
 
 jobs:
   build:
@@ -39,17 +39,17 @@ jobs:
         shell: bash
 
       - name: Change config filename
-        run: sed -r --in-place 's/\%\%RYUJINX_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Ryujinx.Common/ReleaseInformation.cs
+        run: sed -r --in-place 's/\%\%Kaijinix_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Kaijinix.Common/ReleaseInformation.cs
         shell: bash
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
       - name: Change config filename for macOS
-        run: sed -r -i '' 's/\%\%RYUJINX_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Ryujinx.Common/ReleaseInformation.cs
+        run: sed -r -i '' 's/\%\%Kaijinix_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Kaijinix.Common/ReleaseInformation.cs
         shell: bash
         if: github.event_name == 'pull_request' && matrix.platform.os == 'macos-13'
 
       - name: Build
-        run: dotnet build -c "${{ matrix.configuration }}" -p:Version="${{ env.RYUJINX_BASE_VERSION }}" -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER
+        run: dotnet build -c "${{ matrix.configuration }}" -p:Version="${{ env.Kaijinix_BASE_VERSION }}" -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER
 
       - name: Test
         uses: TSRBerry/unstable-commands@v1
@@ -59,43 +59,43 @@ jobs:
           retry-codes: 139
         if: matrix.platform.name != 'linux-arm64'
 
-      - name: Publish Ryujinx
-        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish -p:Version="${{ env.RYUJINX_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Ryujinx --self-contained true
+      - name: Publish Kaijinix
+        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish -p:Version="${{ env.Kaijinix_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Kaijinix --self-contained true
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
-      - name: Publish Ryujinx.Headless.SDL2
-        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish_sdl2_headless -p:Version="${{ env.RYUJINX_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Ryujinx.Headless.SDL2 --self-contained true
+      - name: Publish Kaijinix.Headless.SDL2
+        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish_sdl2_headless -p:Version="${{ env.Kaijinix_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Kaijinix.Headless.SDL2 --self-contained true
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
-      - name: Publish Ryujinx.Gtk3
-        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish_gtk -p:Version="${{ env.RYUJINX_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Ryujinx.Gtk3 --self-contained true
+      - name: Publish Kaijinix.Gtk3
+        run: dotnet publish -c "${{ matrix.configuration }}" -r "${{ matrix.platform.name }}" -o ./publish_gtk -p:Version="${{ env.Kaijinix_BASE_VERSION }}" -p:DebugType=embedded -p:SourceRevisionId="${{ steps.git_short_hash.outputs.result }}" -p:ExtraDefineConstants=DISABLE_UPDATER src/Kaijinix.Gtk3 --self-contained true
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
       - name: Set executable bit
         run: |
-          chmod +x ./publish/Ryujinx ./publish/Ryujinx.sh
-          chmod +x ./publish_sdl2_headless/Ryujinx.Headless.SDL2 ./publish_sdl2_headless/Ryujinx.sh
-          chmod +x ./publish_gtk/Ryujinx.Gtk3 ./publish_gtk/Ryujinx.sh
+          chmod +x ./publish/Kaijinix ./publish/Kaijinix.sh
+          chmod +x ./publish_sdl2_headless/Kaijinix.Headless.SDL2 ./publish_sdl2_headless/Kaijinix.sh
+          chmod +x ./publish_gtk/Kaijinix.Gtk3 ./publish_gtk/Kaijinix.sh
         if: github.event_name == 'pull_request' && matrix.platform.os == 'ubuntu-latest'
 
-      - name: Upload Ryujinx artifact
+      - name: Upload Kaijinix artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ryujinx-${{ matrix.configuration }}-${{ env.RYUJINX_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
+          name: Kaijinix-${{ matrix.configuration }}-${{ env.Kaijinix_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
           path: publish
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
-      - name: Upload Ryujinx.Headless.SDL2 artifact
+      - name: Upload Kaijinix.Headless.SDL2 artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sdl2-ryujinx-headless-${{ matrix.configuration }}-${{ env.RYUJINX_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
+          name: sdl2-Kaijinix-headless-${{ matrix.configuration }}-${{ env.Kaijinix_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
           path: publish_sdl2_headless
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
-      - name: Upload Ryujinx.Gtk3 artifact
+      - name: Upload Kaijinix.Gtk3 artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gtk-ryujinx-${{ matrix.configuration }}-${{ env.RYUJINX_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
+          name: gtk-Kaijinix-${{ matrix.configuration }}-${{ env.Kaijinix_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-${{ matrix.platform.zip_os_name }}
           path: publish_gtk
         if: github.event_name == 'pull_request' && matrix.platform.os != 'macos-13'
 
@@ -136,28 +136,28 @@ jobs:
         run: echo "result=$(git rev-parse --short "${{ github.sha }}")" >> $GITHUB_OUTPUT
 
       - name: Change config filename
-        run: sed -r --in-place 's/\%\%RYUJINX_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Ryujinx.Common/ReleaseInformation.cs
+        run: sed -r --in-place 's/\%\%Kaijinix_CONFIG_FILE_NAME\%\%/PRConfig\.json/g;' src/Kaijinix.Common/ReleaseInformation.cs
         shell: bash
         if: github.event_name == 'pull_request'
 
-      - name: Publish macOS Ryujinx
+      - name: Publish macOS Kaijinix
         run: |
-          ./distribution/macos/create_macos_build_ava.sh . publish_tmp publish ./distribution/macos/entitlements.xml "${{ env.RYUJINX_BASE_VERSION }}" "${{ steps.git_short_hash.outputs.result }}" "${{ matrix.configuration }}" "-p:ExtraDefineConstants=DISABLE_UPDATER"
+          ./distribution/macos/create_macos_build_ava.sh . publish_tmp publish ./distribution/macos/entitlements.xml "${{ env.Kaijinix_BASE_VERSION }}" "${{ steps.git_short_hash.outputs.result }}" "${{ matrix.configuration }}" "-p:ExtraDefineConstants=DISABLE_UPDATER"
 
-      - name: Publish macOS Ryujinx.Headless.SDL2
+      - name: Publish macOS Kaijinix.Headless.SDL2
         run: |
-          ./distribution/macos/create_macos_build_headless.sh . publish_tmp_headless publish_headless ./distribution/macos/entitlements.xml "${{ env.RYUJINX_BASE_VERSION }}" "${{ steps.git_short_hash.outputs.result }}" "${{ matrix.configuration }}" "-p:ExtraDefineConstants=DISABLE_UPDATER"
+          ./distribution/macos/create_macos_build_headless.sh . publish_tmp_headless publish_headless ./distribution/macos/entitlements.xml "${{ env.Kaijinix_BASE_VERSION }}" "${{ steps.git_short_hash.outputs.result }}" "${{ matrix.configuration }}" "-p:ExtraDefineConstants=DISABLE_UPDATER"
 
-      - name: Upload Ryujinx artifact
+      - name: Upload Kaijinix artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ryujinx-${{ matrix.configuration }}-${{ env.RYUJINX_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-macos_universal
+          name: Kaijinix-${{ matrix.configuration }}-${{ env.Kaijinix_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-macos_universal
           path: "publish/*.tar.gz"
         if: github.event_name == 'pull_request'
 
-      - name: Upload Ryujinx.Headless.SDL2 artifact
+      - name: Upload Kaijinix.Headless.SDL2 artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sdl2-ryujinx-headless-${{ matrix.configuration }}-${{ env.RYUJINX_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-macos_universal
+          name: sdl2-Kaijinix-headless-${{ matrix.configuration }}-${{ env.Kaijinix_BASE_VERSION }}+${{ steps.git_short_hash.outputs.result }}-macos_universal
           path: "publish_headless/*.tar.gz"
         if: github.event_name == 'pull_request'

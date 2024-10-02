@@ -1,5 +1,5 @@
 name: Missing CPU Instruction
-description: CPU Instruction is missing in Ryujinx.
+description: CPU Instruction is missing in Kaijinix.
 title: "[CPU]"
 labels: [cpu, not-implemented]
 body:
@@ -21,6 +21,6 @@ body:
     id: required
     attributes:
       label: Required by
-      description: Add links to the [compatibility list page(s)](https://github.com/Ryujinx/Ryujinx-Games-List/issues) of the game(s) that require this instruction.
+      description: Add links to the [compatibility list page(s)](https://github.com/Kaijinix/Kaijinix-Games-List/issues) of the game(s) that require this instruction.
     validations:
       required: true

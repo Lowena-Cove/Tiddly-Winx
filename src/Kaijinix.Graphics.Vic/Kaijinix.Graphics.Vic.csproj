@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaijinix.Common\Kaijinix.Common.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Device\Kaijinix.Graphics.Device.csproj" />
+    <ProjectReference Include="..\Kaijinix.Graphics.Texture\Kaijinix.Graphics.Texture.csproj" />
+  </ItemGroup>
+
+</Project>

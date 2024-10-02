@@ -43,22 +43,22 @@ An [EditorConfig](https://editorconfig.org "EditorConfig homepage") file (`.edit
 ``ShaderCache.cs:``
 
 ```C#
-using Ryujinx.Common.Configuration;
-using Ryujinx.Common.Logging;
-using Ryujinx.Graphics.GAL;
-using Ryujinx.Graphics.Gpu.Engine.Threed;
-using Ryujinx.Graphics.Gpu.Engine.Types;
-using Ryujinx.Graphics.Gpu.Image;
-using Ryujinx.Graphics.Gpu.Memory;
-using Ryujinx.Graphics.Gpu.Shader.DiskCache;
-using Ryujinx.Graphics.Shader;
-using Ryujinx.Graphics.Shader.Translation;
+using Kaijinix.Common.Configuration;
+using Kaijinix.Common.Logging;
+using Kaijinix.Graphics.GAL;
+using Kaijinix.Graphics.Gpu.Engine.Threed;
+using Kaijinix.Graphics.Gpu.Engine.Types;
+using Kaijinix.Graphics.Gpu.Image;
+using Kaijinix.Graphics.Gpu.Memory;
+using Kaijinix.Graphics.Gpu.Shader.DiskCache;
+using Kaijinix.Graphics.Shader;
+using Kaijinix.Graphics.Shader.Translation;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
-namespace Ryujinx.Graphics.Gpu.Shader
+namespace Kaijinix.Graphics.Gpu.Shader
 {
     /// <summary>
     /// Memory cache of shader code.

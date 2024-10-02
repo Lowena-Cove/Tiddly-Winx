@@ -1,5 +1,5 @@
 name: Missing Service Call
-description: Service call is missing in Ryujinx.
+description: Service call is missing in Kaijinix.
 labels: not-implemented
 body:
   - type: textarea
@@ -20,6 +20,6 @@ body:
     id: required
     attributes:
       label: Required by
-      description:  Add links to the [compatibility list page(s)](https://github.com/Ryujinx/Ryujinx-Games-List/issues) of the game(s) that require this service.
+      description:  Add links to the [compatibility list page(s)](https://github.com/Kaijinix/Kaijinix-Games-List/issues) of the game(s) that require this service.
     validations:
       required: true
