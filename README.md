@@ -1,2 +1,2 @@
 soon :tm:
-join https://discord.gg/5kApBBkjtn for news and info.....
+discord coming soon
