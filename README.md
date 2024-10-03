@@ -1,4 +1,4 @@
-## Super Awesome Fork of RYUJINX to revive it because we are so cool and definitely have dev skills!!!!!!11!!
+## Super Awesome Fork of RYUJINX to revive it [now with dev skills ;)]
 
 PLANNED FEATURES:
 
